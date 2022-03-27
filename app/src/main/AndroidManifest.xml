@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineClothesStore">
         <activity
+            android:name=".SignInCustomer"
+            android:exported="false" />
+        <activity
             android:name=".Register"
             android:exported="false" />
         <activity
