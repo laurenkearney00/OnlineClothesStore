@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineClothesStore">
         <activity
+            android:name=".AdminOptions"
+            android:exported="false" />
+        <activity
             android:name=".CustomerOptions"
             android:exported="false" />
         <activity
