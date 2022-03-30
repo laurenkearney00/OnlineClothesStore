@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "655245733135",
+    "project_id": "onlineclothesstore-e61c6",
+    "storage_bucket": "onlineclothesstore-e61c6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:655245733135:android:a4ff7e34c29cf4f047a27a",
+        "android_client_info": {
+          "package_name": "com.example.onlineclothesstore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "655245733135-dq2dl85j80g8j93sn2s1fi9fo7j5ptoi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUppBlZ1xUQItt9FrFFKgRQTWa9Da9YMA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "655245733135-dq2dl85j80g8j93sn2s1fi9fo7j5ptoi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
