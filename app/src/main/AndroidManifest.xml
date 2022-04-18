@@ -22,7 +22,7 @@
             android:name=".CustomerOptions"
             android:exported="false" />
         <activity
-            android:name=".Register"
+            android:name=".RegisterCustomer"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

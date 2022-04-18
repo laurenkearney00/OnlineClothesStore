@@ -22,16 +22,12 @@ import com.google.firebase.database.DatabaseReference;
 
 public class LoginCustomer extends AppCompatActivity implements View.OnClickListener{
 
-    private TextView register, forgotPassword;
+    private TextView register;
     private EditText editTextEmail, editTextPassword;
     private Button signIn;
 
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
-
-    private FirebaseUser user;
-    private DatabaseReference reference;
-    private String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,9 +46,6 @@ public class LoginCustomer extends AppCompatActivity implements View.OnClickList
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         mAuth = FirebaseAuth.getInstance();
-
-        forgotPassword = (TextView) findViewById(R.id.register);
-        forgotPassword.setOnClickListener(this);
     }
 
     @Override
