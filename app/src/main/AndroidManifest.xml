@@ -10,13 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineClothesStore">
         <activity
+            android:name=".LoginAdministrator"
+            android:exported="false" />
+        <activity
+            android:name=".LoginCustomer"
+            android:exported="false" />
+        <activity
             android:name=".AdminOptions"
             android:exported="false" />
         <activity
             android:name=".CustomerOptions"
-            android:exported="false" />
-        <activity
-            android:name=".SignInCustomer"
             android:exported="false" />
         <activity
             android:name=".Register"
