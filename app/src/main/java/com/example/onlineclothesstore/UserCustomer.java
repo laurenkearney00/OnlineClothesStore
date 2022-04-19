@@ -2,15 +2,15 @@ package com.example.onlineclothesstore;
 
 public class UserCustomer {
 
-    public String fullName, dateOfBirth, phoneNumber, email, passengerID;
+    public String fullName, dateOfBirth, phoneNumber, email, shippingAddress, paymentMethod, customerID;
 
 
     public String getFullName() {
         return fullName;
     }
 
-    public String getPassengerID() {
-        return passengerID;
+    public String getCustomerID() {
+        return customerID;
     }
 
     public String getDateOfBirth() {
@@ -19,6 +19,14 @@ public class UserCustomer {
 
     public String getPhoneNumber() {
         return phoneNumber;
+    }
+
+    public String getShippingAddress() {
+        return shippingAddress;
+    }
+
+    public String getPaymentMethod() {
+        return paymentMethod;
     }
 
     public void setFullName(String fullName) {
@@ -37,12 +45,21 @@ public class UserCustomer {
         this.phoneNumber = phoneNumber;
     }
 
+    public void setShippingAddress(String shippingAddress) {
+        this.shippingAddress = shippingAddress;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public void setPassengerID(String passengerID) {
-        this.passengerID = passengerID;
+
+    public void setCustomerID(String customerID) {
+        this.customerID = customerID;
     }
 
 
@@ -50,12 +67,14 @@ public class UserCustomer {
 
     }
 
-    public UserCustomer(String fullName, String dateOfBirth, String email, String phoneNumber, String passengerID){
+    public UserCustomer(String fullName, String dateOfBirth, String email, String phoneNumber, String shippingAddress, String paymentMethod, String customerID){
         this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;
         this.email = email;
         this.phoneNumber = phoneNumber;
-        this.passengerID = passengerID;
+        this.shippingAddress = shippingAddress;
+        this.paymentMethod = paymentMethod;
+        this.customerID = customerID;
     }
 }
 

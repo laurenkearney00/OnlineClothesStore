@@ -139,10 +139,10 @@ public class RegisterCustomer extends AppCompatActivity implements View.OnClickL
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if (task.isSuccessful()) {
-                            String passengerID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                            UserCustomer user = new UserCustomer(fullName, dateOfBirth, email, phoneNumber, passengerID);
+                            String customerID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                            UserCustomer user = new UserCustomer(fullName, dateOfBirth, email, phoneNumber, shippingAddress, paymentMethod, customerID);
 
-                            FirebaseDatabase.getInstance().getReference("Users: Passengers")
+                            FirebaseDatabase.getInstance().getReference("Users: Customers")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
