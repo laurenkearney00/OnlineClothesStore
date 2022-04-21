@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.onlineclothesstore" >
+    package="com.example.onlineclothesstore">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -8,7 +11,19 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.OnlineClothesStore" >
+        android:theme="@style/Theme.OnlineClothesStore">
+        <activity
+            android:name=".ViewEditStockItemDetails"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateItems"
+            android:exported="false" />
+        <activity
+            android:name=".DisplayItems"
+            android:exported="false" />
+        <activity
+            android:name=".AddItems"
+            android:exported="false" />
         <activity
             android:name=".RegisterAdministrator"
             android:exported="false" />
@@ -32,7 +47,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

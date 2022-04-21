@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/borderlayout"
+    android:padding="10dp"
+    tools:context=".AddItems">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical"
+            android:layout_alignParentLeft="true">
+
+            <TextView
+                android:id="@+id/headerTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Enter Item Details"
+                android:textSize="20dp"
+                android:layout_marginTop="30dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/titleEditText"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="30dp"
+                android:hint="Title"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/manufacturerEditText"
+                android:layout_width="322dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="15dp"
+                android:hint="Manufacturer"
+                android:inputType="text"
+                android:minLines="3" />
+
+            <EditText
+                android:id="@+id/categoryEditText"
+                android:layout_width="322dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="15dp"
+                android:hint="Category"
+                android:inputType="text"
+                android:minLines="3" />
+
+            <EditText
+                android:id="@+id/priceEditText"
+                android:layout_width="322dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="15dp"
+                android:hint="Price"
+                android:inputType="numberDecimal"
+                android:minLines="3" />
+
+            <LinearLayout
+                android:layout_width="362dp"
+                android:layout_height="163dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_choose_image"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@color/white"
+                    android:text="Choose Image"
+                    android:textColor="@color/white" />
+
+                <ImageView
+                    android:id="@+id/chosenImageView"
+                    android:layout_width="195dp"
+                    android:layout_height="125dp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/uploadBtn"
+                android:layout_width="255dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="Upload"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+</LinearLayout>
