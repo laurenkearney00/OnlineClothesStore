@@ -1,6 +1,6 @@
 package com.example.onlineclothesstore;
 
-public class StockItems {
+public class StockItems{
 
     public String title, manufacturer, category, image, itemID;
     public Double price;
@@ -76,5 +76,6 @@ public class StockItems {
         this.price = price;
         this.quantity = quantity;
     }
+
 }
 
