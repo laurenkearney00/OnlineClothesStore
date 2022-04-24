@@ -1,8 +1,8 @@
 package com.example.onlineclothesstore;
 
-public class StockItems{
+public class ShoppingCartItems{
 
-    public String title, manufacturer, category, image, price, quantity, itemID;
+    public String title, manufacturer, category, image, price, quantity, itemID, shoppingCartItemID;
 
     public String getTitle() {
         return title;
@@ -28,8 +28,16 @@ public class StockItems{
         return image;
     }
 
+    public String getShoppingCartItemID() {
+        return shoppingCartItemID;
+    }
+
     public String getQuantity() {
         return quantity;
+    }
+
+    public void setShoppingCartItemID(String shoppingCartItemID) {
+        this.shoppingCartItemID= shoppingCartItemID;
     }
 
     public void setTitle(String title) {
@@ -61,11 +69,11 @@ public class StockItems{
         this.quantity = quantity;
     }
 
-    public StockItems(){
+    public ShoppingCartItems(){
 
     }
 
-    public StockItems(String title, String manufacturer, String category, String image, String itemID, String price, String quantity){
+    public ShoppingCartItems(String title, String manufacturer, String category, String image, String itemID, String price, String quantity, String shoppingCartItemID){
         this.title = title;
         this.manufacturer = manufacturer;
         this.category = category;
@@ -73,6 +81,7 @@ public class StockItems{
         this.itemID = itemID;
         this.price = price;
         this.quantity = quantity;
+        this.shoppingCartItemID = shoppingCartItemID;
     }
 
 }

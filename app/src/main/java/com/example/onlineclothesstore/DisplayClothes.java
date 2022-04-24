@@ -24,14 +24,14 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class DisplayItems extends AppCompatActivity implements View.OnClickListener {
+public class DisplayClothes extends AppCompatActivity implements View.OnClickListener {
 
 
     private ArrayList<StockItems> list = new ArrayList<>();
     DatabaseReference databaseReference;
     ProgressDialog progressDialog;
     RecyclerView mRecyclerView;
-    public static RecyclerAdapter myAdapter;
+    public static ClothesAdapter myAdapter;
     EditText editText;
     private Button sortAscending;
     private Button sortDescending;
@@ -39,7 +39,7 @@ public class DisplayItems extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_items);
+        setContentView(R.layout.activity_display_clothes);
 
         sortAscending = (Button) findViewById(R.id.sortAscending);
         sortAscending.setOnClickListener(this);
@@ -72,14 +72,14 @@ public class DisplayItems extends AppCompatActivity implements View.OnClickListe
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setHasFixedSize(true);
-        myAdapter = new RecyclerAdapter(DisplayItems.this, list);
+        myAdapter = new ClothesAdapter(DisplayClothes.this, list);
 
 
         mRecyclerView.setAdapter(myAdapter);
         mRecyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
 
 
-        progressDialog = new ProgressDialog(DisplayItems.this);
+        progressDialog = new ProgressDialog(DisplayClothes.this);
 
         progressDialog.setMessage("Loading Data from Firebase Database");
 

@@ -13,7 +13,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> {
+public class ClothesAdapter extends RecyclerView.Adapter<ClothesAdapter.MyViewHolder> {
     private ArrayList<StockItems> list;
 
     public static final String MESSAGE_KEY1 ="title";
@@ -58,7 +58,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
             String price = list.get(position).getPrice();
             String quantity = list.get(position).getQuantity();
 
-            Intent intent= new Intent(view.getContext(), UpdateStockDatabase.class);
+            Intent intent= new Intent(view.getContext(), ViewClothesOptions.class);
             intent.putExtra(MESSAGE_KEY1, title);
             intent.putExtra(MESSAGE_KEY2, position);
             intent.putExtra(MESSAGE_KEY3, manufacturer);
@@ -72,13 +72,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
     }
 
-    public RecyclerAdapter(DisplayItems displayItems, ArrayList<StockItems> stockItems) {
+    public ClothesAdapter(DisplayClothes displayClothes, ArrayList<StockItems> stockItems) {
         list = stockItems;
     }
 
     // Create new views (invoked by the layout manager)
     @Override
-    public RecyclerAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ClothesAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
         LayoutInflater inflater= LayoutInflater.from(parent.getContext());
         View itemView= inflater.inflate(R.layout.row_model, parent, false);
@@ -130,13 +130,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
     }
 
-    public void updateStockItems(int position, StockItems stockItems){
-
-        list.remove(position);
-        list.add(stockItems);
-        notifyItemChanged(position);
-        notifyDataSetChanged();
-    }
 
 }
 

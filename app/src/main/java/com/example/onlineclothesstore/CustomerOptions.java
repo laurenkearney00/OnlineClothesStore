@@ -82,6 +82,16 @@ public class CustomerOptions extends AppCompatActivity {
             Intent i= new Intent(CustomerOptions.this, ViewUpdateCustomerProfile.class);
             startActivity(i);
         }
+        if (id == R.id.action_DisplayClothes) {
+            //do suitable action such as call to start other activity //and return true;
+            Intent i= new Intent(CustomerOptions.this, DisplayClothes.class);
+            startActivity(i);
+        }
+        if (id == R.id.action_ViewShoppingCart) {
+            //do suitable action such as call to start other activity //and return true;
+            Intent i= new Intent(CustomerOptions.this, ShoppingCart.class);
+            startActivity(i);
+        }
         return true;
     }
 

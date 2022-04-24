@@ -87,6 +87,11 @@ public class AdminOptions extends AppCompatActivity {
             Intent i= new Intent(AdminOptions.this, DisplayItems.class);
             startActivity(i);
         }
+        if (id == R.id.action_viewCustomerDetails) {
+            //do suitable action such as call to start other activity //and return true;
+            Intent i= new Intent(AdminOptions.this, ViewCustomerDetails.class);
+            startActivity(i);
+        }
         return true;
     }
 

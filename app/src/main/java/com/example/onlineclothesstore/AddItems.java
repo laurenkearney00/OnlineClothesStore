@@ -47,6 +47,7 @@ public class AddItems extends AppCompatActivity {
 
     private StorageTask mUploadTask;
     private int quantity;
+    private String stock;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +55,7 @@ public class AddItems extends AppCompatActivity {
         setContentView(R.layout.activity_add_items);
 
         quantity = 1;
+        stock = String.valueOf(quantity);
 
         chooseImageBtn = findViewById(R.id.button_choose_image);
         uploadBtn = findViewById(R.id.uploadBtn);
@@ -132,14 +134,13 @@ public class AddItems extends AppCompatActivity {
                                     Toast.makeText(AddItems.this, "Item upload successful", Toast.LENGTH_LONG).show();
                                     String uploadId = mDatabaseRef.push().getKey();
                                     String amount = priceEditText.getText().toString().trim();
-                                    double price = Double.parseDouble(amount);
                                     StockItems upload = new StockItems(titleEditText.getText().toString().trim(),
                                             manufacturerEditText.getText().toString().trim(),
                                             categoryEditText.getText().toString().trim(),
                                             uri.toString(),
                                             uploadId,
-                                            price,
-                                            quantity);
+                                            amount,
+                                            stock);
 
                                     mDatabaseRef.child(uploadId).setValue(upload);
 
@@ -165,7 +166,7 @@ public class AddItems extends AppCompatActivity {
 
     }
     private void openImagesActivity(){
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, AdminOptions.class);
         startActivity(intent);
     }
 }

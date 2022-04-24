@@ -8,4 +8,16 @@
         android:title="View/Update Customer Profile"
         app:showAsAction="never"/>
 
+    <item
+        android:id="@+id/action_DisplayClothes"
+        android:orderInCategory="80"
+        android:title="View Clothes"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_ViewShoppingCart"
+        android:orderInCategory="80"
+        android:title="View Shopping Cart"
+        app:showAsAction="never"/>
+
 </menu>

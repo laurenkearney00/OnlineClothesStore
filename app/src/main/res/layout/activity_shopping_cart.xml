@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:background="@drawable/borderlayout"
-android:padding="10dp"
-tools:context=".DisplayItems">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/borderlayout"
+    android:padding="10dp"
+    tools:context=".ShoppingCart">
 
 
     <TextView
@@ -15,7 +15,7 @@ tools:context=".DisplayItems">
         android:layout_height="34dp"
         android:layout_marginTop="30dp"
         android:fontFamily="sans-serif-black"
-        android:text="View Stock Items "
+        android:text="View Shopping Cart  "
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,20 +25,6 @@ tools:context=".DisplayItems">
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.007" />
 
-    <Button
-        android:id="@+id/sortDescending"
-        android:layout_width="196dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="#57A3E6"
-        android:text="Sort items in descending order"
-        android:textColor="#ffffff"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintHorizontal_bias="0.958"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/banner" />
 
     <EditText
         android:id="@+id/search"
@@ -53,7 +39,7 @@ tools:context=".DisplayItems">
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sortDescending" />
+        app:layout_constraintTop_toBottomOf="@id/banner" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/my_recycler_view"
@@ -63,20 +49,5 @@ tools:context=".DisplayItems">
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/search" />
-
-    <Button
-        android:id="@+id/sortAscending"
-        android:layout_width="196dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="#57A3E6"
-        android:text="Sort items in ascending order"
-        android:textColor="#ffffff"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/banner" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

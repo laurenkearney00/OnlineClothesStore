@@ -13,10 +13,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineClothesStore">
         <activity
-            android:name=".ViewEditStockItemDetails"
+            android:name=".Payment"
             android:exported="false" />
         <activity
-            android:name=".UpdateItems"
+            android:name=".ShoppingCart"
+            android:exported="false" />
+        <activity
+            android:name=".ViewClothesOptions"
+            android:exported="false" />
+        <activity
+            android:name=".RateItems"
+            android:exported="false" />
+        <activity
+            android:name=".DisplayClothes"
+            android:exported="false" />
+        <activity
+            android:name=".ViewCustomerDetails"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateStockDatabase"
             android:exported="false" />
         <activity
             android:name=".DisplayItems"
