@@ -84,18 +84,6 @@ public class RegisterCustomer extends AppCompatActivity implements View.OnClickL
             return;
         }
 
-        if (phoneNumber.isEmpty()) {
-            editTextDateOfBirth.setError("Phone number is required!");
-            editTextDateOfBirth.requestFocus();
-            return;
-        }
-
-        if (!phoneNumber.matches("[0][0-9]{9}")) {
-            editTextPhoneNumber.setError("Correct format for phone number is: 0xx xxx xxxx");
-            editTextPhoneNumber.requestFocus();
-            return;
-        }
-
         if (email.isEmpty()) {
             editTextEmail.setError("Email is required!");
             editTextEmail.requestFocus();
@@ -107,6 +95,19 @@ public class RegisterCustomer extends AppCompatActivity implements View.OnClickL
             editTextEmail.requestFocus();
             return;
         }
+
+        if (phoneNumber.isEmpty()) {
+            editTextPhoneNumber.setError("Phone number is required!");
+            editTextPhoneNumber.requestFocus();
+            return;
+        }
+
+        if (!phoneNumber.matches("[0][0-9]{9}")) {
+            editTextPhoneNumber.setError("Correct format for phone number is: 0xx xxx xxxx");
+            editTextPhoneNumber.requestFocus();
+            return;
+        }
+
 
         if (shippingAddress.isEmpty()) {
             editTextShippingAddress.setError("Shipping Address is required!");
