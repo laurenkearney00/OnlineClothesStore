@@ -36,6 +36,10 @@ public class ShoppingCart extends AppCompatActivity implements View.OnClickListe
     public static final String KEY3 = "price";
     public static final String KEY4 = "title";
     public static final String KEY5 = "quantity";
+    public static final String KEY6 = "manufacturer";
+    public static final String KEY7 = "category";
+    public static final String KEY8 = "image";
+
     private ArrayList<ShoppingCartItems> list = new ArrayList<>();
     DatabaseReference databaseReference;
     ProgressDialog progressDialog;
@@ -51,6 +55,9 @@ public class ShoppingCart extends AppCompatActivity implements View.OnClickListe
     private String price;
     private String title;
     private String quantity;
+    private String manufacturer;
+    private String category;
+    private String image;
     private DatabaseReference fireDB;
 
     @Override
@@ -144,6 +151,9 @@ public class ShoppingCart extends AppCompatActivity implements View.OnClickListe
                 price = shoppingCartItems.getPrice();
                 title = shoppingCartItems.getTitle();
                 quantity = shoppingCartItems.getQuantity();
+                manufacturer = shoppingCartItems.getManufacturer();
+                category = shoppingCartItems.getCategory();
+                image = shoppingCartItems.getImage();
 
 
                 buyItem = view.findViewById(R.id.buyItem);
@@ -159,6 +169,9 @@ public class ShoppingCart extends AppCompatActivity implements View.OnClickListe
                         i.putExtra(KEY3, price);
                         i.putExtra(KEY4, title);
                         i.putExtra(KEY5, quantity);
+                        i.putExtra(KEY6, manufacturer);
+                        i.putExtra(KEY7, category);
+                        i.putExtra(KEY8, image);
                         startActivity(i);
                     }
                 });

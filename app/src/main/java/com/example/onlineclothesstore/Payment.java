@@ -11,19 +11,28 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class Payment extends AppCompatActivity implements View.OnClickListener{
     private Button confirmPayment;
-    private DatabaseReference fireDB, databaseReference;
+    private DatabaseReference fireDB, databaseReference, dataRef;
     private String userID;
     private String shoppingCartItemID;
     private String itemID;
     private String quantity;
+    private String purchaseID;
+    private String customerID;
+    private String price;
+    private String title;
+    private String manufacturer;
+    private String category;
+    private String image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +45,12 @@ public class Payment extends AppCompatActivity implements View.OnClickListener{
         Intent i = getIntent();
         itemID = i.getStringExtra(ShoppingCart.KEY1);
         shoppingCartItemID = i.getStringExtra(ShoppingCart.KEY2);
-        String price = i.getStringExtra(ShoppingCart.KEY3);
-        String title = i.getStringExtra(ShoppingCart.KEY4);
+        price = i.getStringExtra(ShoppingCart.KEY3);
+        title = i.getStringExtra(ShoppingCart.KEY4);
         quantity = i.getStringExtra(ShoppingCart.KEY5);
+        manufacturer = i.getStringExtra(ShoppingCart.KEY6);
+        category = i.getStringExtra(ShoppingCart.KEY7);
+        image = i.getStringExtra(ShoppingCart.KEY8);
         TextView nameOfItems = findViewById(R.id.nameOfItems);
         TextView totalamount = findViewById(R.id.value);
         nameOfItems.setText(title);
@@ -120,6 +132,39 @@ public class Payment extends AppCompatActivity implements View.OnClickListener{
                 public void onFailure(@NonNull Exception e) {// Write failed
                 }
             });
+            dataRef = FirebaseDatabase.getInstance().getReference().child("Purchases");
+            purchaseID = fireDB.push().getKey();
+            customerID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+            Intent intent = getIntent();
+            itemID = intent.getStringExtra(ShoppingCart.KEY1);
+            price = intent.getStringExtra(ShoppingCart.KEY3);
+            title = intent.getStringExtra(ShoppingCart.KEY4);
+            manufacturer = intent.getStringExtra(ShoppingCart.KEY6);
+            category = intent.getStringExtra(ShoppingCart.KEY7);
+            image = intent.getStringExtra(ShoppingCart.KEY8);
+
+            CustomerPurchases customerPurchases = new CustomerPurchases();
+            customerPurchases.setItemID(itemID);
+            customerPurchases.setPrice(price);
+            customerPurchases.setTitle(title);
+            customerPurchases.setManufacturer(manufacturer);
+            customerPurchases.setCategory(category);
+            customerPurchases.setImage(image);
+
+
+            FirebaseDatabase.getInstance().getReference().child("Users: Customers").child(customerID).child("Purchases")
+                    .child(purchaseID)
+                    .setValue(customerPurchases).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+
+                    if (task.isSuccessful()) {
+                    } else {
+                    }
+                }
+            });
+
             Intent i = new Intent(Payment.this, CustomerOptions.class);
             startActivity(i);
         }
