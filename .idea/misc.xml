@@ -16,6 +16,7 @@
         <entry key="..\:/Users/laure/AndroidStudioProjects/OnlineClothesStore/app/src/main/res/layout/activity_login_customer.xml" value="0.203125" />
         <entry key="..\:/Users/laure/AndroidStudioProjects/OnlineClothesStore/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/laure/AndroidStudioProjects/OnlineClothesStore/app/src/main/res/layout/activity_payment.xml" value="0.22" />
+        <entry key="..\:/Users/laure/AndroidStudioProjects/OnlineClothesStore/app/src/main/res/layout/activity_rate_items.xml" value="0.22" />
         <entry key="..\:/Users/laure/AndroidStudioProjects/OnlineClothesStore/app/src/main/res/layout/activity_register.xml" value="0.20462962962962963" />
         <entry key="..\:/Users/laure/AndroidStudioProjects/OnlineClothesStore/app/src/main/res/layout/activity_register_administrator.xml" value="0.2171875" />
         <entry key="..\:/Users/laure/AndroidStudioProjects/OnlineClothesStore/app/src/main/res/layout/activity_register_customer.xml" value="0.22" />
@@ -26,6 +27,7 @@
         <entry key="..\:/Users/laure/AndroidStudioProjects/OnlineClothesStore/app/src/main/res/layout/activity_user_administrator.xml" value="0.2171875" />
         <entry key="..\:/Users/laure/AndroidStudioProjects/OnlineClothesStore/app/src/main/res/layout/activity_view_clothes_options.xml" value="0.1574074074074074" />
         <entry key="..\:/Users/laure/AndroidStudioProjects/OnlineClothesStore/app/src/main/res/layout/activity_view_customer_details.xml" value="0.1574074074074074" />
+        <entry key="..\:/Users/laure/AndroidStudioProjects/OnlineClothesStore/app/src/main/res/layout/activity_view_purchases.xml" value="0.1574074074074074" />
         <entry key="..\:/Users/laure/AndroidStudioProjects/OnlineClothesStore/app/src/main/res/layout/activity_view_update_customer_profile.xml" value="0.22" />
         <entry key="..\:/Users/laure/AndroidStudioProjects/OnlineClothesStore/app/src/main/res/layout/dialog_options.xml" value="0.2171875" />
         <entry key="..\:/Users/laure/AndroidStudioProjects/OnlineClothesStore/app/src/main/res/layout/dialog_shopping_cart_options.xml" value="0.22" />
@@ -33,6 +35,7 @@
         <entry key="..\:/Users/laure/AndroidStudioProjects/OnlineClothesStore/app/src/main/res/layout/dialog_sort_ascending.xml" value="0.1574074074074074" />
         <entry key="..\:/Users/laure/AndroidStudioProjects/OnlineClothesStore/app/src/main/res/layout/dialog_sort_descending.xml" value="0.1574074074074074" />
         <entry key="..\:/Users/laure/AndroidStudioProjects/OnlineClothesStore/app/src/main/res/layout/item_customer.xml" value="0.22" />
+        <entry key="..\:/Users/laure/AndroidStudioProjects/OnlineClothesStore/app/src/main/res/layout/item_purchase.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/laure/AndroidStudioProjects/OnlineClothesStore/app/src/main/res/layout/row_model.xml" value="0.2171875" />
         <entry key="..\:/Users/laure/AndroidStudioProjects/OnlineClothesStore/app/src/main/res/menu/administrator_menu.xml" value="0.2171875" />
         <entry key="..\:/Users/laure/AndroidStudioProjects/OnlineClothesStore/app/src/main/res/menu/customer_menu.xml" value="0.2171875" />

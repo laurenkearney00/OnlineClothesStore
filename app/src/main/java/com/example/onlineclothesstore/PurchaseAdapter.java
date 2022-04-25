@@ -1,19 +1,20 @@
 package com.example.onlineclothesstore;
 
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.MyViewHolder> {
-    public static final String KEY1 = "userID";
-    public static final String KEY2 = "position";
-    private ArrayList<UserCustomer> list;
+public class PurchaseAdapter extends RecyclerView.Adapter<PurchaseAdapter.MyViewHolder> {
+    private ArrayList<CustomerPurchases> list;
 
     // Provide a reference to the views for each data item
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
@@ -21,6 +22,8 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.MyView
         public TextView textView2;
         public TextView textView3;
         public TextView textView4;
+        public TextView textView5;
+        public ImageView itemImageView;
 
         public MyViewHolder(View itemView) {
             super(itemView); //itemView corresponds to all views defined in row layout
@@ -29,6 +32,8 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.MyView
             textView2 = itemView.findViewById(R.id.textView2);
             textView3 = itemView.findViewById(R.id.textView3);
             textView4 = itemView.findViewById(R.id.textView4);
+            textView5 = itemView.findViewById(R.id.quantityTextView);
+            itemImageView = itemView.findViewById(R.id.itemImageView);
             itemView.setOnClickListener(this);
         }
 
@@ -36,26 +41,26 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.MyView
         @Override
         public void onClick(View view) {
             int position = this.getLayoutPosition();
-            String userID = list.get(position).getCustomerID();
-
-            Intent intent= new Intent(view.getContext(), ViewPurchases.class);
-            intent.putExtra(KEY1, userID);
-            intent.putExtra(KEY2, position);
-            view.getContext().startActivity(intent);
+            String title = list.get(position).getTitle();
+            String manufacturer = list.get(position).getManufacturer();
+            String category = list.get(position).getCategory();
+            String image = list.get(position).getImage();
+            String itemID = list.get(position).getItemID();
+            String price = list.get(position).getPrice();
         }
 
     }
 
-    public CustomerAdapter(ViewCustomerDetails viewCustomerDetails, ArrayList<UserCustomer> trips) {
-        list = trips;
+    public PurchaseAdapter(ViewPurchases viewPurchases, ArrayList<CustomerPurchases> customerPurchases) {
+        list = customerPurchases;
     }
 
     // Create new views (invoked by the layout manager)
     @Override
-    public CustomerAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public PurchaseAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
         LayoutInflater inflater= LayoutInflater.from(parent.getContext());
-        View itemView= inflater.inflate(R.layout.item_customer, parent, false);
+        View itemView= inflater.inflate(R.layout.item_purchase, parent, false);
         //false: inflate the row
         // layout to parent and return view, if true return parent+view
         MyViewHolder viewHolder= new MyViewHolder(itemView);
@@ -67,29 +72,30 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.MyView
         // -get element from your dataset at this position
         // -replace the contents of the view with that element
 
+        CustomerPurchases customerPurchases = list.get(position);
+        holder.textView1.setText("Title: " + customerPurchases.getTitle());
+        holder.textView2.setText("Manufacturer: " + customerPurchases.getManufacturer());
+        holder.textView3.setText("Category: " + customerPurchases.getCategory());
+        holder.textView4.setText("Price: €" + customerPurchases.getPrice());
 
-        UserCustomer userCustomer = list.get(position);
-
-        holder.textView1.setText("Customer's name: " + userCustomer.getFullName());
-        holder.textView2.setText("Phone number: " + userCustomer.getPhoneNumber());
-        holder.textView3.setText("Shipping address: " + userCustomer.getShippingAddress());
-        holder.textView4.setText("Payment method: " + userCustomer.getPaymentMethod());
+        Picasso.get()
+                .load(customerPurchases.getImage())
+                .into(holder.itemImageView);
     }
 
     // Return the size of your dataset
     @Override
     public int getItemCount() {
         return list.size();
-        //return mylistvalues.size();
     }
 
 
-
-
-    public void filterList(ArrayList<UserCustomer> filteredList) {
+    public void filterList(ArrayList<CustomerPurchases> filteredList) {
         list = filteredList;
         notifyDataSetChanged();
 
     }
+
 }
+
 

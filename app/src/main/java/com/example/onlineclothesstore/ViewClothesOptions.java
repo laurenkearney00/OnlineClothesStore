@@ -18,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class ViewClothesOptions extends AppCompatActivity implements View.OnClickListener {
 
-    private static final String KEY1 = "itemID";
+    public static final String KEY1 = "itemID";
     private DatabaseReference reference;
     private DatabaseReference fireDB;
     private String userID;
@@ -58,6 +58,8 @@ public class ViewClothesOptions extends AppCompatActivity implements View.OnClic
         itemID = intent.getStringExtra(ClothesAdapter.MESSAGE_KEY6);
         price = intent.getStringExtra(ClothesAdapter.MESSAGE_KEY7);
         quantity = intent.getStringExtra(ClothesAdapter.MESSAGE_KEY8);
+        userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
 
         TextView titleText = (TextView) findViewById(R.id.titleTxt);
         TextView manufacturerText = (TextView)  findViewById(R.id.manufacturerTxt);
@@ -113,8 +115,6 @@ public class ViewClothesOptions extends AppCompatActivity implements View.OnClic
         shoppingCartItems.setShoppingCartItemID(shoppingCartItemID);
         shoppingCartItems.setItemID(itemID);
 
-        userID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-
         FirebaseDatabase.getInstance().getReference().child("Users: Customers").child(userID).child("ShoppingCartClothes")
                 .child(shoppingCartItemID)
                 .setValue(shoppingCartItems).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -134,7 +134,9 @@ public class ViewClothesOptions extends AppCompatActivity implements View.OnClic
 
 
     private void rateItem()  {
-
+        Intent i = new Intent(ViewClothesOptions.this, RateItems.class);
+        i.putExtra(KEY1, itemID);
+        startActivity(i);
     }
 }
 
